@@ -11,6 +11,4 @@ ci_pipeline:
               LASTNAME: ${{ secrets.DANIEL }}  
               TRUENAME: ${{ env.DANIEL }}  
               YESNAME: ${{ vars.DANIEL }}  
-              SINAME: "VEGETA"
-       run: php index.php
-       
+              SINAME: VEGETA
