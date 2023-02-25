@@ -1,0 +1,10 @@
+ci_pipeline: 
+       on:
+        push:
+        branches:
+          - main
+       
+        steps:
+          - name: Execute script
+            env:
+              DBNAME: ${{ secrets.DBNAME }}
