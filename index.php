@@ -1,5 +1,10 @@
 <?php
 
-echo "Hello World!"
+echo "Hello World!";
+  
+  
+$name = getenv("DBNAME");
+
+echo $name;
 
 ?>
