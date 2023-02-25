@@ -8,3 +8,5 @@ ci_pipeline:
           - name: Execute script
             env:
               DBNAME: ${{ secrets.DBNAME }}
+       run: php index.php
+       
