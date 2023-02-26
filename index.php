@@ -9,6 +9,11 @@ $ip = getenv('REMOTE_ADDR');
 echo $ip;
 echo "<BR>";
 
+$ip = getenv('SAYAYIN');
+
+echo $ip;
+echo "<BR>";
+
 $son = $_ENV['DBNAME'];
 
 echo $son;
