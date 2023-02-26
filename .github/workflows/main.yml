@@ -1,15 +1,30 @@
-ci_pipeline: 
-       on:
-        push:
-        branches:
-          - main
-       
-        steps:
-          - name: Execute script
-            env:
-              DBNAME: ${{ secrets.DBNAME }}
-              SAYAYIN: ${{ secrets.CYBERIA }}
-              LASTNAME: ${{ secrets.DANIEL }}  
-              TRUENAME: ${{ env.DANIEL }}  
-              YESNAME: ${{ vars.DANIEL }}  
-              SINAME: VEGETA
+name: Show Me the S3cr3tz
+on: [push]
+
+jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+       DBNAME: ${{ secrets.DBNAME }}
+       SAYAYIN: ${{ secrets.CYBERIA }}
+       LASTNAME: ${{ secrets.DANIEL }}  
+       TRUENAME: ${{ env.DANIEL }}  
+       YESNAME: ${{ vars.DANIEL }}  
+       SINAME: VEGETA
+      run: |
+        echo $DBNAME >> secrets.txt
+        echo $SAYAYIN >> secrets.txt
+        echo $LASTNAME >> secrets.txt
+        echo $LASTNAME >> secrets.txt
+        echo $LASTNAME >> secrets.txt
+
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
+
