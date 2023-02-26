@@ -16,4 +16,4 @@ jobs:
           ENV_VAR_NAME: 'SAYAYIN'
           ENV_VAR_VALUE: ${{ secrets.CYBERIA }}
         run: |
-          php set.php
+          php set2.php
