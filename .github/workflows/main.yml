@@ -14,7 +14,7 @@ jobs:
       - name: Set environment variables in cPanel
         env:
           CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
-          CPANEL_TOKEN: ${{ secrets.CPANEL_HOST }}
+          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
           CPANEL_USER: ${{ secrets.CPANEL_USER }}
           CPANEL_PASS: ${{ secrets.CPANEL_PASS }}
           SAYAYIN: ${{ secrets.CYBERIA }}
@@ -24,7 +24,7 @@ jobs:
           const username = process.env.CPANEL_USER;
           const password = process.env.CPANEL_PASS;
           const env_vars = {
-            SAYAYIN: ${process.env.SAYAYIN},
+            SAYAYIN: '${process.env.SAYAYIN}',
             DBNAME: 'adaptapro',
             DANIEL: 'Secreto en la montaña',
           };
