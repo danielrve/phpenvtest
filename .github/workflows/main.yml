@@ -13,11 +13,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set Environment Variable in cPanel
-        uses: jazzdan/cpanel-setenv-action@v1
+        uses: crazy-max/cpanel-git@v4
         with:
-          domain: adrian.starnetcomputers.us
-          cpanel_username: ${{ secrets.CPANEL_USERNAME }}
-          cpanel_password: ${{ secrets.CPANEL_PASSWORD }}
-          name: SAYAYIN
-          value: ${{ secrets.CYBERIA }}
-          type: php
+          host: example.com
+          username: ${{ secrets.CPANEL_USERNAME }}
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          dir: /path/to/app
+          env: SAYAYIN=${{ secrets.CYBERIA }}
