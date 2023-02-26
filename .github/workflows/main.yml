@@ -8,6 +8,7 @@ ci_pipeline:
           - name: Execute script
             env:
               DBNAME: ${{ secrets.DBNAME }}
+              SAYAYIN: ${{ secrets.CYBERIA }}
               LASTNAME: ${{ secrets.DANIEL }}  
               TRUENAME: ${{ env.DANIEL }}  
               YESNAME: ${{ vars.DANIEL }}  
