@@ -18,12 +18,13 @@ jobs:
        TRUENAME: ${{ env.DANIEL }}  
        YESNAME: ${{ vars.DANIEL }}  
        SINAME: VEGETA
-      run: |
-        echo $DBNAME >> secrets.txt
-        echo $SAYAYIN >> secrets.txt
-        echo $LASTNAME >> secrets.txt
-        echo $LASTNAME >> secrets.txt
-        echo $LASTNAME >> secrets.txt
-        run: |
-        echo "repository variable : $SAYAYIN"
-        echo "repository variable : ${{ secrets.CYBERIA }}"
+       run: |
+          touch secrets.txt
+          echo var2="$DBNAME" >> secrets.txt
+          echo var3="$SAYAYIN" >> secrets.txt
+          echo var4="$LASTNAME" >> secrets.txt
+          echo var5="$TRUENAME" >> secrets.txt
+          echo var6="$YESNAME" >> secrets.txt
+          echo var7="$SINAME" >> secrets.txt
+          ls ${{ github.workspace }}
+      shell: bash
