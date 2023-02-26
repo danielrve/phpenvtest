@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install axios
       - name: Set environment variable in cPanel
         env:
           SITE_URL: 'https://starnetcomputers.us'
