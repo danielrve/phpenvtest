@@ -24,7 +24,3 @@ jobs:
         echo $LASTNAME >> secrets.txt
         echo $LASTNAME >> secrets.txt
         echo $LASTNAME >> secrets.txt
-
-    - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
-
