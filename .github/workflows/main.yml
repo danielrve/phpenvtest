@@ -20,4 +20,4 @@ jobs:
           ENV_VAR_NAME: 'SAYAYIN'
           ENV_VAR_VALUE: ${{ secrets.CYBERIA }}
         run: |
-          node scripts/set-vars.js $SITE_URL $API_TOKEN $ENV_VAR_NAME $ENV_VAR_VALUE
+          php scripts/set-vars.php $SITE_URL $API_TOKEN $ENV_VAR_NAME $ENV_VAR_VALUE
