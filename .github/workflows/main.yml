@@ -1,26 +1,49 @@
-name: Deploy to cPanel
-
+name: Set Environment Variables in cPanel
 on:
   push:
     branches:
       - main
-
 jobs:
-  deploy:
+  set-env-vars:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Set Environment Variable in cPanel
-        uses: jeracsi/cpanel-git-deploy@v1
-        with:
-          host: adrian.starnetcomputers.us
-          username: ${{ secrets.CPANEL_USERNAME }}
-          password: ${{ secrets.CPANEL_PASSWORD }}
-          dir: /test/
-          env: SAYAYIN=${{ secrets.CYBERIA }}
-          
-      - name: Deploy PHP Application
+      - name: Install dependencies
+        run: npm install axios
+      - name: Set environment variables in cPanel
+        env:
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+          CPANEL_TOKEN: ${{ secrets.CPANEL_HOST }}
+          CPANEL_USER: ${{ secrets.CPANEL_USER }}
+          CPANEL_PASS: ${{ secrets.CPANEL_PASS }}
+          SAYAYIN: ${{ secrets.CYBERIA }}
         run: |
-          # Deploy your PHP application here
+          const axios = require('axios');
+          const api_url = `https://${process.env.CPANEL_HOST}:2083/cpsess${process.env.CPANEL_TOKEN}/execute/`;
+          const username = process.env.CPANEL_USER;
+          const password = process.env.CPANEL_PASS;
+          const env_vars = {
+            SAYAYIN: ${process.env.SAYAYIN},
+            DBNAME: 'adaptapro',
+            DANIEL: 'Secreto en la montaña',
+          };
+          const payload = {
+            cpanel_jsonapi_user: username,
+            cpanel_jsonapi_module: 'Environment',
+            cpanel_jsonapi_func: 'setenv',
+            var: Object.keys(env_vars),
+            value: Object.values(env_vars),
+          };
+          const headers = {
+            Authorization: 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'),
+            'Content-Type': 'application/json',
+          };
+          axios.post(api_url, payload, { headers })
+            .then(response => {
+              console.log(response.data);
+            })
+            .catch(error => {
+              console.error(error);
+              process.exit(1);
+            });
