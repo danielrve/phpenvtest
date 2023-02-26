@@ -8,7 +8,7 @@ const envVarName = process.env.ENV_VAR_NAME;
 const envVarValue = process.env.ENV_VAR_VALUE;
 
 // Construct API URL
-const apiUrl = `${siteUrl}/cpanel/execute/Environment/setenv`;
+const apiUrl = `${siteUrl}:2083/cpanel/execute/Environment/setenv`;
 
 // Construct payload
 const payload = querystring.stringify({
