@@ -13,7 +13,9 @@ jobs:
         env:
           SITE_URL: 'https://starnetcomputers.us'
           API_TOKEN: ${{ secrets.CPANEL_TOKEN }}
+          USER_NAME: ${{ secrets.CPANEL_USERNAME }}
+          PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
           ENV_VAR_NAME: 'SAYAYIN'
           ENV_VAR_VALUE: ${{ secrets.CYBERIA }}
         run: |
-          node scripts/set-vars.js
+          php scripts/set-vars.php
