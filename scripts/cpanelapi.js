@@ -7,10 +7,13 @@ const vars = {
   DBUSER: process.env.VAR2,
   DBPASS: process.env.VAR3,
 };
+console.log(siteUrl);
+console.log(apiToken);
+
 
 const cpanel = new cpanelapi({
   host: siteUrl,
-  port: 2083,
+  port: '2083',
   ssl: true,
   apitoken: apiToken,
 });
