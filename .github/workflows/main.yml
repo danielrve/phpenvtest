@@ -13,10 +13,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set Environment Variable in cPanel
-        uses: crazy-max/cpanel-git@v4
+        uses: jeracsi/cpanel-git-deploy@v1
         with:
-          host: example.com
+          host: adrian.starnetcomputers.us
           username: ${{ secrets.CPANEL_USERNAME }}
           password: ${{ secrets.CPANEL_PASSWORD }}
-          dir: /path/to/app
+          dir: /test/
           env: SAYAYIN=${{ secrets.CYBERIA }}
+          
+      - name: Deploy PHP Application
+        run: |
+          # Deploy your PHP application here
