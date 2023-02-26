@@ -14,6 +14,11 @@ $ip = getenv('SAYAYIN');
 echo $ip;
 echo "<BR>";
 
+$son = $_ENV['SAYAYIN'];
+
+echo $son;
+echo "<BR>";
+
 $son = $_ENV['DBNAME'];
 
 echo $son;
