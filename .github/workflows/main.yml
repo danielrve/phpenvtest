@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: danielrve/cpanel-set-vars@v1
+        uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install axios
       - name: Set environment variable in cPanel
@@ -17,3 +17,5 @@ jobs:
           API_TOKEN: ${{ secrets.CPANEL_TOKEN }}
           ENV_VAR_NAME: 'SAYAYIN'
           ENV_VAR_VALUE: ${{ secrets.CYBERIA }}
+        run: |
+          node set-var-env.js
