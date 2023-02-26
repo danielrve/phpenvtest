@@ -3,9 +3,9 @@ const cpanelapi = require('cpanel-node');
 const siteUrl = process.env.SITE_URL;
 const apiToken = process.env.API_TOKEN;
 const vars = {
-  DBHOST: process.env.VAR1,
-  DBUSER: process.env.VAR2,
-  DBPASS: process.env.VAR3,
+  DBHOST: 'adrian.gerig',
+  DBUSER: 'root',
+  DBPASS: 'lasolucion',
 };
 console.log(siteUrl);
 console.log(apiToken);
@@ -13,9 +13,10 @@ console.log(apiToken);
 
 const cpanel = new cpanelapi({
   host: siteUrl,
-  port: '2083',
+  user: process.env.USER,
+  pass: process.env.PASS,
   ssl: true,
-  apitoken: apiToken,
+  port: '2083'
 });
 
 for (const [key, value] of Object.entries(vars)) {
