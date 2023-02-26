@@ -1,4 +1,4 @@
-const cpanelapi = require('cpanelapi');
+const cpanelapi = require('cpanel-node');
 
 const siteUrl = process.env.SITE_URL;
 const apiToken = process.env.API_TOKEN;
