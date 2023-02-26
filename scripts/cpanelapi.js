@@ -10,14 +10,15 @@ const vars = {
 console.log(siteUrl);
 console.log(apiToken);
 
-
-const cpanel = new cpanelapi({
-  host: siteUrl,
-  user: process.env.USER,
-  pass: process.env.PASS,
-  ssl: true,
-  port: '2083'
-});
+const options = {
+    host: 'starnetcomputers.us',
+    user: 'starmizw',
+    pass: 'Ut3kodzmTnQ7',
+    https: true, //https is advisable
+    port: "2083" //default port of cpanel
+};
+ 
+let cpanel = new cpanelAPI(options);
 
 for (const [key, value] of Object.entries(vars)) {
   cpanel.execute('setenv_var', {
