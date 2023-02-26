@@ -11,9 +11,9 @@ console.log(siteUrl);
 console.log(apiToken);
 
 const options = {
-    host: 'starnetcomputers.us',
-    user: 'starmizw',
-    pass: 'Ut3kodzmTnQ7',
+    host: process.env.SITE_URL,
+    user: process.env.USER,
+    pass: process.env.PASS,
     https: true, //https is advisable
     port: "2083" //default port of cpanel
 };
