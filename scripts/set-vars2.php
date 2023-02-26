@@ -11,8 +11,8 @@ $username =  'starmizw';
 $password =  'Ut3kodzmTnQ7';
 
 // Environment variable name and value
-$env_var_name = 'SAYAYIN';
-$env_var_value = 'Pronto llegara el dia de mi suerte';
+$env_name = 'SAYAYIN';
+$env_value = 'Pronto llegara el dia de mi suerte';
 
 // Build the API request
 $request = json_encode(array(
