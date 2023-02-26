@@ -16,4 +16,4 @@ jobs:
           ENV_VAR_NAME: 'SAYAYIN'
           ENV_VAR_VALUE: ${{ secrets.CYBERIA }}
         run: |
-          node cpanel.js
+          node .github/workflow/cpanel.js
