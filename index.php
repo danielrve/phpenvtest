@@ -19,4 +19,8 @@ $son = $_ENV['DANIEL'];
 echo $son;
 echo "<BR>";
 
+$son = getenv('DANIEL');
+
+echo $son;
+echo "<BR>";
 ?>
