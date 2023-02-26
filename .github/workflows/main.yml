@@ -10,14 +10,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: npm install axios
+        run: npm install cpanelapi
       - name: Set environment variable in cPanel
         env:
           SITE_URL: 'https://starnetcomputers.us'
           API_TOKEN: ${{ secrets.CPANEL_TOKEN }}
-          USER_NAME: ${{ secrets.CPANEL_USERNAME }}
-          PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
-          ENV_VAR_NAME: 'SAYAYIN'
+          VAR1: ${{ secrets.CPANEL_USERNAME }}
+          VAR2: ${{ secrets.CPANEL_PASSWORD }}
+          VAR3: 'SAYAYIN'
           ENV_VAR_VALUE: ${{ secrets.CYBERIA }}
         run: |
-          php scripts/set-vars.php $SITE_URL $API_TOKEN $ENV_VAR_NAME $ENV_VAR_VALUE
+          node scripts/cpanelapi.js
