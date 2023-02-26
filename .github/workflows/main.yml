@@ -10,7 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: npm install cpanelapi
+        run: npm install cpanel-node
       - name: Set environment variable in cPanel
         env:
           SITE_URL: 'https://starnetcomputers.us'
