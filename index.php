@@ -9,7 +9,7 @@ $ip = getenv('REMOTE_ADDR');
 echo $ip;
 echo "<BR>";
 
-$son = getenv('LASTNAME');
+$son = $_ENV['DBNAME'];
 
 echo $son;
 echo "<BR>";
