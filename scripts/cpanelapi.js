@@ -18,7 +18,7 @@ const options = {
     port: "2083" //default port of cpanel
 };
  
-let cpanel = new cpanelAPI(options);
+let cpanel = new cpanelapi(options);
 
 for (const [key, value] of Object.entries(vars)) {
   cpanel.execute('setenv_var', {
