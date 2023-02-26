@@ -1,6 +1,6 @@
 <?php
 
-$site_url = 'https://starnetcomputers.us';
+$site_url = 'https://adrian.starnetcomputers.us';
 $api_token = '1CWSB2BXTS9Q6INZ3HAG4CUODV25TKYT';
 
 // cPanel API URL
