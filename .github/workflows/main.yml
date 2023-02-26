@@ -15,8 +15,8 @@ jobs:
         env:
           CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
           CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
-          CPANEL_USER: ${{ secrets.CPANEL_USER }}
-          CPANEL_PASS: ${{ secrets.CPANEL_PASS }}
+          CPANEL_USER: ${{ secrets.CPANEL_USERNAME }}
+          CPANEL_PASS: ${{ secrets.CPANEL_PASSWORD }}
           SAYAYIN: ${{ secrets.CYBERIA }}
         run: |
           const axios = require('axios');
