@@ -15,9 +15,9 @@ jobs:
         env:
           SITE_URL: 'https://starnetcomputers.us'
           API_TOKEN: ${{ secrets.CPANEL_TOKEN }}
-          VAR1: ${{ secrets.CPANEL_USERNAME }}
-          VAR2: ${{ secrets.CPANEL_PASSWORD }}
+          USER: ${{ secrets.CPANEL_USERNAME }}
+          PASS: ${{ secrets.CPANEL_PASSWORD }}
           VAR3: 'SAYAYIN'
-          ENV_VAR_VALUE: ${{ secrets.CYBERIA }}
+          DBNAME: ${{ secrets.CYBERIA }}
         run: |
           node scripts/cpanelapi.js
