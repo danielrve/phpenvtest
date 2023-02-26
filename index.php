@@ -14,4 +14,9 @@ $son = $_ENV['DBNAME'];
 echo $son;
 echo "<BR>";
 
+$son = $_ENV['DANIEL'];
+
+echo $son;
+echo "<BR>";
+
 ?>
