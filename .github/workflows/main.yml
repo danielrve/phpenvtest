@@ -24,3 +24,6 @@ jobs:
         echo $LASTNAME >> secrets.txt
         echo $LASTNAME >> secrets.txt
         echo $LASTNAME >> secrets.txt
+        run: |
+        echo "repository variable : $SAYAYIN"
+        echo "repository variable : ${{ secrets.CYBERIA }}"
