@@ -1,49 +1,19 @@
-name: Set Environment Variables in cPanel
+name: Set Environment Variable in cPanel
 on:
   push:
     branches:
       - main
 jobs:
-  set-env-vars:
+  set-env-var:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install axios
-      - name: Set environment variables in cPanel
+      - name: Set environment variable in cPanel
         env:
-          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
-          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
-          CPANEL_USER: ${{ secrets.CPANEL_USERNAME }}
-          CPANEL_PASS: ${{ secrets.CPANEL_PASSWORD }}
-          SAYAYIN: ${{ secrets.CYBERIA }}
+          SITE_URL: 'https://adrian.starnetcomputers.us'
+          API_TOKEN: ${{ secrets.CPANEL_TOKEN }}
+          ENV_VAR_NAME: 'SAYAYIN'
+          ENV_VAR_VALUE: ${{ secrets.CYBERIA }}
         run: |
-          const axios = require('axios');
-          const api_url = `https://${process.env.CPANEL_HOST}:2083/cpsess${process.env.CPANEL_TOKEN}/execute/`;
-          const username = process.env.CPANEL_USER;
-          const password = process.env.CPANEL_PASS;
-          const env_vars = {
-            SAYAYIN: '${process.env.SAYAYIN}',
-            DBNAME: 'adaptapro',
-            DANIEL: 'Secreto en la montaña',
-          };
-          const payload = {
-            cpanel_jsonapi_user: username,
-            cpanel_jsonapi_module: 'Environment',
-            cpanel_jsonapi_func: 'setenv',
-            var: Object.keys(env_vars),
-            value: Object.values(env_vars),
-          };
-          const headers = {
-            Authorization: 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'),
-            'Content-Type': 'application/json',
-          };
-          axios.post(api_url, payload, { headers })
-            .then(response => {
-              console.log(response.data);
-            })
-            .catch(error => {
-              console.error(error);
-              process.exit(1);
-            });
+          node cpanel.js
