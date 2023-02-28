@@ -19,5 +19,4 @@ jobs:
           PASS: ${{ secrets.CPANEL_PASSWORD }}
           VAR3: 'SAYAYIN'
           DBNAME: ${{ secrets.CYBERIA }}
-        run: |
-          node scripts/cpanelapi.js
+          run: echo "ADRIAN=$API_TOKEN" >> $GITHUB_ENV
