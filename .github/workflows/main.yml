@@ -15,4 +15,4 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
       env:
         DBNAME: ${{ secrets.CYBERIA }}
-        script: export DBNAME=${{ secrets.CYBERIA }} | echo $DBNAME
+        script: export DBNAME=LOCOTE | echo $DBNAME
